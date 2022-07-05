@@ -12,6 +12,10 @@ const galleryMarkup = galleryItems.map(item =>
 );
 
 galleryRootEl.innerHTML = galleryMarkup.join(' ');
+var lightbox = new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionsData: 'alt',
+});
 
 function createGalleryItem({ previewImage, fullsizeImage, description }) {
   return `<a class="gallery__item" href=${fullsizeImage}>
